@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\adria\Logger2\Logger\wilderness_tracker\build\windows\x64\CMakeFiles\805f24fbbefb9dc8470aca04d2d900ec\flutter_windows.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\adria\Logger2\Logger\wilderness_tracker\build\windows\x64\CMakeFiles\a2fc474c4a32ca7332ed2e7efa49044a\flutter_assemble.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\adria\Logger2\Logger\wilderness_tracker\windows\flutter\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\adria\Logger2\Logger\wilderness_tracker\build\windows\x64\flutter\CMakeFiles\flutter_assemble" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{BF654272-4CC5-3CE7-A40A-F6733ED55A1B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\adria\Logger2\Logger\wilderness_tracker\build\windows\x64\CMakeFiles\2eac0aa647df26b1b65a6a6a351b6d63\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{BF654272-4CC5-3CE7-A40A-F6733ED55A1B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

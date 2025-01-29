@@ -1,0 +1,10 @@
+^C:\USERS\ADRIA\LOGGER2\LOGGER\WILDERNESS_TRACKER\BUILD\WINDOWS\X64\CMAKEFILES\2EAC0AA647DF26B1B65A6A6A351B6D63\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

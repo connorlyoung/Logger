@@ -1,0 +1,1 @@
+ C:\\Users\\adria\\Logger2\\Logger\\wilderness_tracker\\.dart_tool\\flutter_build\\73d038f682cbcff49e67cceaa81dea68\\native_assets.yaml: 
