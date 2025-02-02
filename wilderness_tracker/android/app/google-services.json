@@ -1,0 +1,86 @@
+{
+  "project_info": {
+    "project_number": "499814726491",
+    "project_id": "logger-748d9",
+    "storage_bucket": "logger-748d9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499814726491:android:28e6d4480f596bc559b87e",
+        "android_client_info": {
+          "package_name": "com.CSE115A.logger_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbJzeTdiwX9aTqD81UCyVe10YXGtj3_ko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499814726491:android:5e93ad5ecb1f6e0259b87e",
+        "android_client_info": {
+          "package_name": "com.example.logger"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbJzeTdiwX9aTqD81UCyVe10YXGtj3_ko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499814726491:android:40afe49e4fbe3baf59b87e",
+        "android_client_info": {
+          "package_name": "com.example.logger_application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbJzeTdiwX9aTqD81UCyVe10YXGtj3_ko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499814726491:android:b1b6adcfc396252f59b87e",
+        "android_client_info": {
+          "package_name": "com.example.wilderness_tracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbJzeTdiwX9aTqD81UCyVe10YXGtj3_ko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
