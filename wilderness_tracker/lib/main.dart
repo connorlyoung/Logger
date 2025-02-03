@@ -60,6 +60,14 @@ class MyAppState extends ChangeNotifier {
     }
     notifyListeners();
   }
+
+  String getProfilePicture() {
+    return 'assets/default/profile.png';
+  }
+
+  String getUserName() {
+    return 'John Doe';
+  }
 }
 
 // ...
@@ -231,19 +239,62 @@ class SideBar extends StatelessWidget {
 // -- Profile Page --
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
+  
+  
+
 
   @override
   Widget build(BuildContext context) {
+    var appstate = context.watch<MyAppState>();
     return Scaffold(
+      backgroundColor: customColor,
       appBar: AppBar(
-        title: const Text('Welcome to the Profile Page'),
+        backgroundColor: customColor,
+        actions: [
+          TextButton(
+            onPressed: () {
+              // Button Transition to Profile Settings
+            },
+            child: Text('Edit Profile', style: TextStyle(color: Colors.white)),
+          )
+        ],
       ),
       body: Center(
-        child: ElevatedButton(
-          child: const Text('Open route'),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+        child: Column(
+          children: [
+            SizedBox(height: 28),
+            CircleAvatar(
+              radius: 60,
+              backgroundColor: Colors.black,
+              child:
+                CircleAvatar(
+                  radius: 55,
+                  backgroundImage: AssetImage(appstate.getProfilePicture()),
+                ),
+            ),
+            SizedBox(height: 20),
+            Text(
+              appstate.getUserName(), 
+              style: TextStyle(fontSize: 24, 
+              color: Colors.white)
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  '#Posts ', 
+                  style: TextStyle(fontSize: 23, 
+                  color: Colors.white)
+                ),
+                SizedBox(width: 105),
+                Text(
+                  '#Species', 
+                  style: TextStyle(fontSize: 23, 
+                  color: Colors.white)
+                ),
+            ])
+          ],
         ),
       ),
     );
