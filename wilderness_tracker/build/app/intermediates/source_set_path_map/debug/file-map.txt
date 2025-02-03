@@ -34,5 +34,6 @@ com.example.wilderness_tracker.app-resValues-32 C:\Users\adria\Logger2\Logger\wi
 com.example.wilderness_tracker.app-packageDebugResources-33 C:\Users\adria\Logger2\Logger\wilderness_tracker\build\app\intermediates\incremental\debug\packageDebugResources\merged.dir
 com.example.wilderness_tracker.app-packageDebugResources-34 C:\Users\adria\Logger2\Logger\wilderness_tracker\build\app\intermediates\incremental\debug\packageDebugResources\stripped.dir
 com.example.wilderness_tracker.app-merged_res-35 C:\Users\adria\Logger2\Logger\wilderness_tracker\build\app\intermediates\merged_res\debug
-com.example.wilderness_tracker.app-packaged_res-36 C:\Users\adria\Logger2\Logger\wilderness_tracker\build\firebase_auth\intermediates\packaged_res\debug
-com.example.wilderness_tracker.app-packaged_res-37 C:\Users\adria\Logger2\Logger\wilderness_tracker\build\firebase_core\intermediates\packaged_res\debug
+com.example.wilderness_tracker.app-packaged_res-36 C:\Users\adria\Logger2\Logger\wilderness_tracker\build\cloud_firestore\intermediates\packaged_res\debug
+com.example.wilderness_tracker.app-packaged_res-37 C:\Users\adria\Logger2\Logger\wilderness_tracker\build\firebase_auth\intermediates\packaged_res\debug
+com.example.wilderness_tracker.app-packaged_res-38 C:\Users\adria\Logger2\Logger\wilderness_tracker\build\firebase_core\intermediates\packaged_res\debug

@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class AuthService {
 
@@ -8,11 +9,28 @@ class AuthService {
   User? get currentUser => _auth.currentUser;
 
   // register with email + pass
-  Future<String?> registerWithEmailPass(String email, String password) async {
+  Future<String?> registerWithEmailPass(String email, String password, String username) async {
     try {
       UserCredential result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
       User? user = result.user;
-      return user?.uid;
+      
+      if (user != null) {
+        await user.updateDisplayName(username);
+        await user.reload();
+        
+        await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
+          "uid": user.uid,
+          "email": user.email,
+          "displayName": username,
+          "profilePic": "",
+          "postCount": 0,
+          "speciesCount": 0,
+          "createdAt": FieldValue.serverTimestamp(),
+        });
+
+        return user.uid;
+      }
+    return null;
     } on FirebaseAuthException catch (e) {
       print("FirebaseAuthException: ${e.message}");
       return null; // Explicitly return null on failure
