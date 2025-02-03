@@ -64,77 +64,16 @@ class MyAppState extends ChangeNotifier {
 
 // ...
 
-
+// -- Home Page --
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       
       // -- Drawer widget to display the sidebar -- 
-      drawer: Drawer(
-        child: Container(
-          color: customColor,
-          padding: EdgeInsets.all(20.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              // Profile Name & Settings button
-              Row(
-                children: [
-                  Icon(Icons.person, color: Colors.white),
-                  SizedBox(width: 10),
-                  Text('Profile Name', style: TextStyle(color: Colors.white, fontSize: 18)),
-                  Spacer(),
-                  IconButton(
-                    icon: Icon(Icons.arrow_forward, color: Colors.white),
-                    onPressed: () {
-                      // Directs to view profile page and settings
-                    },
-                  ),
-                ],
-              ),
-              Divider(color: Colors.white),
-              
-              // Menu options
-              //Profile Search option
-              ListTile(
-                title: Text('Profile Search', style: TextStyle(color: Colors.white)),
-                onTap: () {
-                  // Add logic later to search for profiles
-                },
-              ),
-              //Tracked Species option
-              ListTile(
-                title: Text('Tracked Species', style: TextStyle(color: Colors.white)),
-                onTap: () {
-                  // Add logic later to see lists of all and tracked species
-                },
-              ),
-              // Hidden Posts option
-              ListTile(
-                title: Text('Hidden Posts', style: TextStyle(color: Colors.white)),
-                onTap: () {
-                  // Add logic later to view hidden posts
-                },
-              ),
-              // Report a Bug option
-              ListTile(
-                title: Text('Report a Bug', style: TextStyle(color: Colors.white)),
-                onTap: () {
-                  // Add logic later to send reports
-                },
-              ),
-              //settings option
-              ListTile(
-                title: Text('Settings', style: TextStyle(color: Colors.white)),
-                onTap: () {
-                  // Add logic to direct to settings page
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
+      drawer: SideBar(),
       // -- Main content -- 
       body: Column(
         children: [
@@ -173,28 +112,33 @@ class HomePage extends StatelessWidget {
           Builder(
             builder: (BuildContext context) {
               return FloatingActionButton(
+                heroTag: 'openSideBar',
                 onPressed: () { 
                   Scaffold.of(context).openDrawer(); // Open drawer when pressed
                 },
                 backgroundColor: customColor,
-                child: Icon(Icons.menu, color: Colors.white),
                 shape: CircleBorder(side: BorderSide(color: customColor, width: 2)),
                 elevation: 8.0,
                 mini: true,
+                child: Icon(Icons.menu, color: Colors.white),
               );
             }
           ),
           // Add post button
           SizedBox(width:290),
           FloatingActionButton(
+            heroTag: 'addPost',
             onPressed: () { 
-              // Add post functionality here
+              Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const MakePostPage()),
+                    );
             },
             backgroundColor: customColor,
-            child:Icon(Icons.add, color: Colors.white),
             shape: CircleBorder(side: BorderSide(color: customColor, width: 2)),
             elevation: 8.0,
             mini: true,
+            child:Icon(Icons.add, color: Colors.white),
           )
         ]
       ),
@@ -202,31 +146,148 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class BigCard extends StatelessWidget {
-  const BigCard({
+// -- Home Page Widgets --
+class SideBar extends StatelessWidget {
+  const SideBar({
     super.key,
-    required this.pair,
   });
-
-  final WordPair pair;
 
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
-
-    var style = theme.textTheme.displayMedium!.copyWith(
-      color: theme.colorScheme.onPrimary,
+    return Drawer(
+      child: Container(
+        color: customColor,
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            // Profile Name & Settings button
+            Row(
+              children: [
+                Icon(Icons.person, color: Colors.white),
+                SizedBox(width: 10),
+                Text('Profile Name', style: TextStyle(color: Colors.white, fontSize: 18)),
+                Spacer(),
+                IconButton(
+                  icon: Icon(Icons.arrow_forward, color: Colors.white),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ProfilePage()),
+                    );
+                  },
+                ),
+              ],
+            ),
+            Divider(color: Colors.white),
+            
+            // Menu options
+            //Profile Search option
+            ListTile(
+              title: Text('Profile Search', style: TextStyle(color: Colors.white)),
+              onTap: () {
+                // Add logic later to search for profiles
+              },
+            ),
+            //Tracked Species option
+            ListTile(
+              title: Text('Tracked Species', style: TextStyle(color: Colors.white)),
+              onTap: () {
+                // Add logic later to see lists of all and tracked species
+              },
+            ),
+            // Hidden Posts option
+            ListTile(
+              title: Text('Hidden Posts', style: TextStyle(color: Colors.white)),
+              onTap: () {
+                // Add logic later to view hidden posts
+              },
+            ),
+            // Report a Bug option
+            ListTile(
+              title: Text('Report a Bug', style: TextStyle(color: Colors.white)),
+              onTap: () {
+                // Add logic later to send reports
+              },
+            ),
+            //settings option
+            ListTile(
+              title: Text('Settings', style: TextStyle(color: Colors.white)),
+              onTap: () {
+                Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const SettingsPage()),
+                    );
+              },
+            ),
+          ],
+        ),
+      ),
     );
+  }
+}
 
-    return Card(
-      color: theme.colorScheme.primary,
-  
-      child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Text(
-          pair.asPascalCase, 
-          style: style,
-          semanticsLabel: pair.asPascalCase,
+
+// -- Profile Page --
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Welcome to the Profile Page'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text('Open route'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
+  }
+}
+
+// -- Settings Page --
+class SettingsPage extends StatelessWidget {
+  const SettingsPage({super.key});
+
+    @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Welcome to the Settings Page'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text('Open route'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
+  }
+}
+
+// -- Make Post Page --
+class MakePostPage extends StatelessWidget {
+  const MakePostPage({super.key});
+
+    @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Welcome to the Add Post Page'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text('Open route'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
       ),
     );
